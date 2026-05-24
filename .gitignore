@@ -1,0 +1,50 @@
+# Local Environment files
+.env
+.env.local
+.env.*.local
+*.env
+db.sqlite3
+
+# Python virtual environment
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node packages and build outputs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.eslintcache
+.rolldown-cache/
+.vite/
+dist/
+build/
+out/
+
+# IDE and Editor configs
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.swo
+.DS_Store
+
+# Documentation source folder (ignored as requested)
+/md files/
+
+# Docker and runtime logs
+*.log
+logs/
+docker/volumes/

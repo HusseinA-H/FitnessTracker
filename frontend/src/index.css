@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+/* ================= BASE ================= */
+body {
+  font-family: "Space Grotesk", sans-serif;
+  background-color: #0f0f0f;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove ugly focus */
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* =========================
+   HIDE DEFAULT CURSOR
+========================= */
+html,
+body,
+* {
+  cursor: none !important;
+}
+
+/* =========================
+   REMOVE TEXT SELECTION EVERYWHERE
+========================= */
+body {
+  user-select: none;
+}
+
+::selection {
+  background: transparent;
+}
+
+/* =========================
+   CARET CONTROL
+========================= */
+
+/* Hide caret globally */
+* {
+  caret-color: transparent;
+}
+
+/* Allow caret ONLY inside real inputs */
+input,
+textarea {
+  caret-color: #ff6b00 !important;
+  user-select: text !important;
+  cursor: none !important; /* نحافظ على الكيرسور المخصص */
+}
+
+/* =========================
+   CUSTOM CURSOR BASE
+========================= */
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ff6b00;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 999999;
+  transition:
+    width 0.2s ease,
+    height 0.2s ease,
+    background 0.2s ease,
+    border 0.2s ease,
+    transform 0.08s linear;
+}
+
+.custom-cursor::after {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  background: rgba(255, 107, 0, 0.15);
+  filter: blur(12px);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.custom-cursor.active::after {
+  opacity: 1;
+}
+
+/* Hover styles */
+.cursor-button {
+  width: 40px !important;
+  height: 40px !important;
+  background: rgba(255,107,0,0.2);
+  border: 2px solid #ff6b00;
+}
+
+.cursor-link {
+  width: 30px !important;
+  height: 30px !important;
+  border: 2px solid #ffffff;
+}
+
+.cursor-input {
+  width: 16px !important;
+  height: 16px !important;
+  border-radius: 50%;
+  background: rgba(255, 107, 0, 0.6);
+  border: 2px solid #ff6b00;
+}
+
+/* ================= HIDE DEFAULT NUMBER SPINNER ================= */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* ================= INPUT STYLE ================= */
+input,
+select {
+  background: black;
+  border: 1px solid #333;
+  color: white;
+  transition: 0.3s;
+}
+
+input:focus,
+select:focus {
+  border-color: #ff6b00;
+  box-shadow: 0 0 20px rgba(255, 107, 0, 0.5);
+}
+
+.dashboard-glow {
+  box-shadow: 0 0 40px rgba(255,107,0,0.15);
+}
